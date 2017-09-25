@@ -14,7 +14,8 @@ export class AppComponent {
     last_name: "Smith"
   }
     //app.component.ts
-  onSubmit(){
+  onSubmit(data: NgForm){
+    console.log(data.value)
     console.log(this.model)
   }
 
