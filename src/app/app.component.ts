@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {NgForm} from '@angular/forms'
 
 @Component({
@@ -9,13 +9,16 @@ import {NgForm} from '@angular/forms'
 export class AppComponent {
   title = 'app';
 
+  sampleForm: NgForm;
+  @ViewChild('sampleForm') currentForm: NgForm;
+  
   model: object = {
     first_name: "Bob",
     last_name: "Smith"
   }
     //app.component.ts
-  onSubmit(){
-    console.log(this.model)
+  onSubmit(data: NgForm){
+    console.log(data.value)
   }
 
 
